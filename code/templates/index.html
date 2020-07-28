@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Images</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+  <div class="jumbotron text-center" style="background:lightgray !important">
+      <h2> Flickr Image Viewer</h2>
+    <div class="row" >
+      <div class="col"></div>
+      <div class="col">
+        <form method="post" action="/album" role="form", name="albumform">
+          <div class="form-group" >
+            <label for="tag">Search tags:</label>
+            <input type="text" name="tag"><br>
+          </div>
+          <input type="submit" value="Load Images" onlcick="show_images()"><br>
+        </form>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-*-12">
+      <h2>Images ...</h2>
+      <br>
+      <div class="full-img">
+        <!-- <img class="displayed-img"> -->
+      </div>
+
+      <span class="thumb-bar">&nbsp;</span>
+
+      </div>
+      <br/>
+
+      <span id="flickr_images">&nbsp;</span>
+      <br/>
+    </div>
+  </div>
+</div>
+
+  <!-- External JS libraries -->
+    <script src="static/js/d3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bonus.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+
+</html>
